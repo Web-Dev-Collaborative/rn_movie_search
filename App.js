@@ -1,8 +1,9 @@
 import React from 'react'
-import { StyleSheet, Button, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
 
 import SearchScreen from './screens/SearchScreen'
+import ResultsScreen from './screens/ResultsScreen'
 import MovieDetailsScreen from './screens/MovieDetailsScreen'
 
 const styles = StyleSheet.create({
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
 const RootStack = createStackNavigator(
   {
     "SearchScreen": SearchScreen,
+    "ResultsScreen": ResultsScreen,
     "MovieDetailsScreen": MovieDetailsScreen,
   },
   {

@@ -10,6 +10,16 @@ const styles = StyleSheet.create({
     },
     lastLabel: {
       marginBottom: 25,
+    },
+    image: {
+      width: 300, 
+      height: 400, 
+      margin: 10, 
+      padding: 4, 
+    },
+    center: {
+      alignSelf: "center", 
+      justifyContent: "center",
     }
 })
 
@@ -31,11 +41,14 @@ export default class MovieDetailsScreen extends React.Component {
     render() {
       return (
         <View style={styles.screen}>
-          <Image source={{uri: `${this.props.navigation.getParam("Poster")}`}} style={{width: 300, height: 400, margin: 10, padding: 4, alignSelf: "center", justifyContent: "center"}} />
+          { this.props.navigation.getParam("Poster") === 'N/A' ? 
+            <Text style={[styles.center, styles.label, styles.lastLabel]}>- No Poster Available -</Text> :
+            <Image source={{uri: `${this.props.navigation.getParam("Poster")}`}} style={[styles.image, styles.center]} />
+          }
           <Text style={styles.label}>Title - {this.props.navigation.getParam("Title")}</Text>
           <Text style={styles.label}>Release Year - {this.props.navigation.getParam("Year")}</Text>
           <Text style={[styles.label, styles.lastLabel]}>IMdB ID - {this.props.navigation.getParam("imdbID")}</Text>
-          <Button title="Return to Search" onPress={() => this.props.navigation.navigate("SearchScreen")} />
+          <Button title="Return to Search" onPress={() => this.props.navigation.goBack()} />
         </View>
       )
     }
