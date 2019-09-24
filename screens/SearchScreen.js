@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardAvoidingView, ScrollView, StyleSheet, TextInput, View } from 'react-native'
+import { KeyboardAvoidingView, ScrollView, StyleSheet, TextInput, TouchableHighlight, View } from 'react-native'
 
 // import AbortController from "abort-controller"
 // console.log(AbortController)
@@ -86,7 +86,11 @@ export default class SearchScreen extends React.Component {
                     onChangeText={text => this.onChangeText(text)}
                     onSubmitEditing={() => this.initiateSearch()}
                     value={this.state.searchInput}
+                    returnKeyType='search'
                 />
+                <TouchableHighlight onPress={() => this.initiateSearch()}>
+                    <Text>Search</Text>
+                </TouchableHighlight>
             </KeyboardAvoidingView>
         </ScrollView>
       )    
