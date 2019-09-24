@@ -1,6 +1,6 @@
 // takes a query string, an api key, and the number of pages received thus far (starting at 0 for initial call)
 export const searchMovies = async (query, apiKey, page) => {
-    console.log("getting movie data: "+query)
+    // console.log("getting movie data: "+query)
     try {
         // abort controller allows us to unsubscribe on unmount, closing a memory leak if fetch was left unattended
         const searchResult = await fetch(`

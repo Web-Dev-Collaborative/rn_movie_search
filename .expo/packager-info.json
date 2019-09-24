@@ -1,9 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 4612,
-  "expoServerNgrokUrl": "https://6m-rrj.anonymous.rn-movie-search.exp.direct",
-  "packagerNgrokUrl": "https://packager.6m-rrj.anonymous.rn-movie-search.exp.direct",
-  "ngrokPid": 7860
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null
 }

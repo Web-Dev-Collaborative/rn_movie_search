@@ -4,11 +4,10 @@
     "description": "Search for movie data from the Open Movie Database.",
     "slug": "movie-info",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "entryPoint": "./App.js",
@@ -17,7 +16,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ad77aa"
+      "backgroundColor": "#dd66bb"
     },
     "ios": {
       "supportsTablet": true
