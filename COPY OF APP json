@@ -5,6 +5,7 @@
     "slug": "movie-info",
     "privacy": "public",
     "sdkVersion": "35.0.0",
+    "entryPoint": "./App.js",
     "platforms": [
       "ios",
       "android"
@@ -22,7 +23,8 @@
     },
     "android": {
       "package": "com.usarneme.movie_info",
-      "versionCode": 1
+      "versionCode": 1,
+      "icon": "./assets/icon.png"
     }
   }
 }

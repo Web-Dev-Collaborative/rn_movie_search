@@ -29,3 +29,8 @@ export default class App extends React.Component {
     return <RootStack style={styles.screen} />
   }
 }
+
+// attempt to fix error: Uncaught Error: Module AppRegistry is not a registered callable module (calling runApplication)
+// https://github.com/expo/expo/issues/2027
+// import AppRegistry from 'react-native'
+// AppRegistry.registerComponent('Movie Info', ()=>{App})

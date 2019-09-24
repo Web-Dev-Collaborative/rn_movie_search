@@ -35,7 +35,6 @@ export default class MovieDetailsScreen extends React.Component {
       this.state = {
         ...props.navigation.state.params
       }
-      console.log(props.navigation.state.params)
     }
   
     render() {
