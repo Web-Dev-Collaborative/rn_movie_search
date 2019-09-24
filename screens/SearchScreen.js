@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, View } from 'react-native'
+import { Button, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput } from 'react-native'
 
 // import AbortController from "abort-controller"
 // console.log(AbortController)
@@ -60,6 +60,7 @@ export default class SearchScreen extends React.Component {
     }
 
     initiateSearch = async () => {
+      if (this.state.searchInput.length <= 1) return
       // console.log('initiating search...')
       // (input phrase, api key, pages received so far)
       try {
@@ -82,17 +83,6 @@ export default class SearchScreen extends React.Component {
       }
       // console.log('Should not get here?')
     }
-
-    // componentDidMount(){
-    //     return fetch('https://facebook.github.io/react-native/movies.json')
-    //         .then((response) => response.json())
-    //         .then((responseJson) => {
-    //         console.log(responseJson.movies)
-    //       })
-    //       .catch((error) =>{
-    //         console.error(error);
-    //       });
-    //   }
   
     render() {
       return (
@@ -106,9 +96,11 @@ export default class SearchScreen extends React.Component {
                     value={this.state.searchInput}
                     returnKeyType='search'
                 />
-                <TouchableHighlight onPress={() => this.initiateSearch()}>
-                    <Text style={[styles.center, {padding: 10}]}>Search</Text>
-                </TouchableHighlight>
+                <Button 
+                    onPress={() => this.initiateSearch()} 
+                    title="Search" 
+                    disabled={!(this.state.searchInput.length > 1)}
+                    />
             </KeyboardAvoidingView>
         </ScrollView>
       )    
