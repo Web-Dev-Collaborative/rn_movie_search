@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardAvoidingView, ScrollView, StyleSheet, TextInput, TouchableHighlight, View } from 'react-native'
+import { KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, View } from 'react-native'
 
 // import AbortController from "abort-controller"
 // console.log(AbortController)
@@ -60,21 +60,39 @@ export default class SearchScreen extends React.Component {
     }
 
     initiateSearch = async () => {
-        try {
-            // (input phrase, api key, pages received so far)
-            const results = await searchMovies(this.state.searchInput, apiKey, 0)
-            const formattedResults = {
-                searchInput: this.state.searchInput,
-                searchResult: results.searchResult,
-                cachedMovies: results.cachedMovies,
-                resultPagesReceived: results.page,
-            }
-            this.props.navigation.navigate("ResultsScreen", formattedResults)
-        } catch (err) {
-            console.error(err)
-            throw new Error(err.message)
+      // console.log('initiating search...')
+      // (input phrase, api key, pages received so far)
+      try {
+        const results = await searchMovies(this.state.searchInput, apiKey, 0)
+        // console.log('getting results?',results)
+
+        const formattedResults = {
+          searchInput: this.state.searchInput,
+          searchResult: results.searchResult,
+          cachedMovies: results.cachedMovies,
+          resultPagesReceived: results.page,
         }
+
+        // console.log('formatted results:',formattedResults)
+
+        this.props.navigation.navigate("ResultsScreen", formattedResults)
+      }
+      catch (err) {
+        console.error(err)
+      }
+      // console.log('Should not get here?')
     }
+
+    // componentDidMount(){
+    //     return fetch('https://facebook.github.io/react-native/movies.json')
+    //         .then((response) => response.json())
+    //         .then((responseJson) => {
+    //         console.log(responseJson.movies)
+    //       })
+    //       .catch((error) =>{
+    //         console.error(error);
+    //       });
+    //   }
   
     render() {
       return (
@@ -89,7 +107,7 @@ export default class SearchScreen extends React.Component {
                     returnKeyType='search'
                 />
                 <TouchableHighlight onPress={() => this.initiateSearch()}>
-                    <Text>Search</Text>
+                    <Text style={[styles.center, {padding: 10}]}>Search</Text>
                 </TouchableHighlight>
             </KeyboardAvoidingView>
         </ScrollView>

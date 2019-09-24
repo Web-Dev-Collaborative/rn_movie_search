@@ -4,12 +4,20 @@
   "dependencies": {
     "abort-controller": "^3.0.0",
     "event-target-shim": "*",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "expo": "35.0.0",
     "react": "16.8.3",
-    "react-navigation": "2.0.0-beta.5"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-reanimated": "^1.2.0",
+    "react-native-screens": "^1.0.0-alpha.23",
+    "react-navigation": "^4.0.9",
+    "react-navigation-stack": "^1.9.0"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^3.2.0"
+    "babel-plugin-module-resolver": "^3.2.0",
+    "jetifier": "^1.6.4"
+  },
+  "scripts": {
+    "postinstall": "jetifier -r"
   }
 }
